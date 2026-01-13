@@ -1,7 +1,7 @@
 const {test}=require('@playwright/test');
-const {LoginPage}=require('../Pages/LoginPage');
-const {ProductPage}=require('../Pages/ProductPage');
-const {testData}=require('../utils/testData');
+const {LoginPage}=require('../pages/LoginPage');
+const {ProductPage}=require('../pages/ProductPage');
+const testData=require('../utils/testData');
 
 test('List down the products from the page',async({page})=>{
     //step1: Login
@@ -13,7 +13,9 @@ test('List down the products from the page',async({page})=>{
         testData.users.validUser.pword
     );
 
-    
+    await productPage.listDownProducts();
+
+
 
 })
 

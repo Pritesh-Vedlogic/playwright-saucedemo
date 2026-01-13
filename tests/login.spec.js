@@ -1,6 +1,6 @@
 const {test,expect}=require("@playwright/test");
-const {LoginPage}=require('../Pages/LoginPage');
-const {validUser}=require('../utils/testData');
+const {LoginPage}=require('../pages/LoginPage');
+const testData=require('../utils/testData');
 
 test("Valid Login Test", async({page}) => {
 
@@ -8,7 +8,11 @@ test("Valid Login Test", async({page}) => {
 
     await loginPage.navigate();
 
-    await loginPage.login(validUser.uname,validUser.pword);
+    await loginPage.login(
+        testData.users.validUser.uname,
+        testData.users.validUser.pword
+    );
+
     await expect(page).toHaveURL(/inventory\.html/);
 
 })

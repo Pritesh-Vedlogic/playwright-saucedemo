@@ -4,24 +4,24 @@ class ProductPage{
 
         this.page=page;
 
-        this.listOfProducts=page.locator('.inventory_list');//list of products
-        this.shoppingCartButton=page.locator('#shopping_cart_container');//cart button
-        this.clickOnAddToCart=page.locator('#add-to-add-to-cart-sauce-labs-backpack-sauce-labs-backpack');//Add to cart
+        this.productNames=page.locator('.inventory_item_name');//list of products
+        this.shoppingCartButton=page.locator('#shopping_cart_link');//cart button
+        this.clickOnAddToCart=page.locator('#add-to-cart-sauce-labs-backpack');//Add to cart
         this.inventoryItemPrice=page.locator('.inventory_item_price')
         this.menuClick=page.locator('#react-burger-menu-btn');//3 line menu item
         this.clickOnLogout=page.locator('#logout_sidebar_link');//logout from menu
     }
 
     async addProductToCar(){
-        await this.page.click(this.clickOnAddToCart);
+        await this.clickOnAddToCart.click();
     }
 
     async goToCart(){
-        await this.page.click(this.shoppingCartButton);
+        await this.shoppingCartButton.click();
     }
 
     async listDownProducts(){
-        const productNames=await this.page.locator(this.listOfProducts).allTextContents();
+        const productNames=await this.productNames.allTextContents();
         console.log('Total Products:',productNames.length);
 
         for(let i=0;i<productNames.length;i++){
