@@ -1,5 +1,5 @@
 const {test,expect}=require("@playwright/test");
-const {LoginPage}=require('../pages_2/LoginPage');
+const {LoginPage}=require('../pages/LoginPage');
 const testData=require('../utils/testData');
 
 test("Valid Login Test", async({page}) => {

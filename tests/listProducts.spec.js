@@ -1,6 +1,6 @@
 const {test}=require('@playwright/test');
-const {LoginPage}=require('../pages_2/LoginPage');
-const {ProductPage}=require('../pages_2/ProductPage');
+const {LoginPage}=require('../pages/LoginPage');
+const {ProductPage}=require('../pages/ProductPage');
 const testData=require('../utils/testData');
 
 test('List down the products from the page',async({page})=>{
