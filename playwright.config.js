@@ -11,12 +11,7 @@ export default defineConfig({
     baseURL: 'https://www.saucedemo.com/',
     headless: false,
 
-    launchOptions: {
-      args: [
-        '--disable-features=PasswordLeakDetection',
-        '--disable-save-password-bubble',
-      ],
-    },
+   
 
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -24,8 +19,19 @@ export default defineConfig({
   },
 
   projects: [
-    { name: 'Chromium', use: { ...devices['Desktop Chrome'] } },
-   // { name: 'Firefox', use: { ...devices['Desktop Firefox'] } },
+    {
+      name: 'Chromium', 
+      use: { ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: [
+            '--disable-features=PasswordLeakDetection',
+            '--disable-save-password-bubble',
+          ],
+        },
+      } 
+    },
+    
+    { name: 'Firefox', use: { ...devices['Desktop Firefox'] } },
    // { name: 'WebKit', use: { ...devices['Desktop Safari'] } },
   ],
 });

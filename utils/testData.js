@@ -1,8 +1,34 @@
 module.exports={
 
-
+    users:{
     validUser: {
         uname:'standard_user',
         pword:'secret_sauce'
+    },
+    locked:{
+        uname:'locked_out_user',
+        pword:'secret_sauce'
+    },
+    problemUser:{
+        uname:'problem_user',
+        pword:'secret_sauce'
+    },
+    performanceUser:{
+        uname:'performance_glitch_user',
+        pword:'secret_sauce'
+    },
+    errorUser:{
+        uname:'error_user',
+        pword:'secret_sauce'
+    },
+    visualUser:{
+        uname:'visual_user',
+        pword:'secret_sauce'
+    }
+},
+    checkout:{
+        firstName:'TestFirstName',
+        lastName:'TestLastName',
+        zip:'123456'
     }
 };
