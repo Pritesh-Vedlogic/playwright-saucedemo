@@ -20,7 +20,7 @@ export default defineConfig({
       name: 'Chromium', 
       use: { ...devices['Desktop Chrome'],
         launchOptions: {
-          headless:true,
+          headless:false,
           args: [
             '--disable-features=PasswordLeakDetection',
             '--disable-save-password-bubble',
