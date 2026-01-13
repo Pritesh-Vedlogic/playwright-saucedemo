@@ -4,12 +4,11 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-   retries: process.env.CI ? 1 : 0,
+  retries: process.env.CI ? 1 : 0,
   reporter: 'html',
 
   use: {
     baseURL: 'https://www.saucedemo.com/',
-    headless: !!process.env.CI,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'on-first-retry',
@@ -18,10 +17,11 @@ export default defineConfig({
   projects: [
     {
       name: 'Chromium', 
-      use: { ...devices['Desktop Chrome'],
-        launchOptions: {
-          headless:false,
-          args: [
+      use: { 
+              ...devices['Desktop Chrome'],
+      launchOptions: {
+      headless:false,
+      args: [
             '--disable-features=PasswordLeakDetection',
             '--disable-save-password-bubble',
           ],
